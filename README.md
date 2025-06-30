@@ -1,12 +1,102 @@
-# React + Vite
+## SmartBrief AI - Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend client for SmartBrief AI, built with React. It provides a clean, modern, and role-aware user interface for interacting with the AI summarization service.
 
-Currently, two official plugins are available:
+## Frontend [Client LIVE WEBSITE](https://master.d3mia3lbsm9fsq.amplifyapp.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
 
-## Expanding the ESLint configuration
+- `User Authentication:` Clean and secure login and registration forms.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `State Management:` Centralized state management using Redux Toolkit and RTK Query for efficient data fetching and caching.
+
+- `Role-Aware UI:` The user interface dynamically adapts based on the logged-in user's role. Buttons, links, and data displays change to match the user's permissions.
+
+- `Interactive Dashboard:` A two-column layout featuring a history sidebar and a main content area for a seamless user experience.
+
+- `AI Summarization Form:` Users can submit text to be summarized and receive the result in real-time.
+
+- `Re-prompting:` Users with permission can edit their original prompts to regenerate and refine summaries.
+
+- `Admin Panel:` A dedicated "User Management" page, accessible only to admins, for viewing all users and managing their roles and credit balances.
+
+## Tech Stack
+
+- Framework: React
+
+- State Management: Redux Toolkit with RTK Query
+
+- Routing: React Router DOM
+
+- Styling: Tailwind CSS
+
+- Form Handling: React Hook Form
+
+- HTTP Client: Axios
+
+- Deployment: `AWS Amplify`
+
+### Environment Variables
+
+To run this project, you will need to create a .env file in the root of the client directory. This file should contain the base URL of your backend server.
+
+## The URL of your deployed or local backend server
+
+- BaseApi Url use in`src>redux/api/baseApi.js`
+  Use
+
+```
+REACT_APP_API_URL=http://localhost:5000/api/v1
+```
+
+### or use my live ServerApi
+
+```
+REACT_APP_API_URL=https://smart-breaf.vercel.app
+
+```
+
+### Setup and Installation
+
+1. Clone the repository:
+
+```
+git clone [your-repo-url]
+cd smartbrief-client
+```
+
+2. Install dependencies:
+
+```
+npm install
+```
+
+3. Set up your .env file as described above.
+
+4. Start the development server:
+
+```
+npm run dev
+```
+
+## The app will open on http://localhost:5173 (or another available port).
+
+## Sample Login Credentials
+
+You can use the following credentials to test the different user roles.
+
+Password for all roles: `123456`
+
+1. Regular User:(create and view summary)
+
+Username: user
+
+2. Admin User (Full Access):
+
+Username: admin
+
+3. Editor User (Can edit/delete any summary):
+
+Username: editor
+
+Note: Make sure to create these users in your database with the specified roles for the credentials to work.
